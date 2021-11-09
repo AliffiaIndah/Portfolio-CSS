@@ -1,0 +1,69 @@
+integration test syarat utama : wajib dilakukan setelah unit testing selesai. karena harapannya semua error defect sudah ditangani
+tujuan diisolasi : agar jika ada kesalahan ya kesalahan dari komponen itu sendiri
+kemudian developer tester akan memasang2kan
+menemukan adanya fault / eror dari hubungan antar komponen yg sudah di tes.
+yang di cek komunikasinya
+misal :
+kalkulator udah fine
+kalu kalkulator dipanggil komponen lain apakah ada yg salah ga? 
+dasar integration testing yaitu apakah ada kemungkinan fault workflow antar interface / usecase
+dan mungkin jaga apakah ada proses desain yang salah
+
+cek config : mobil apa yg dibeli
+kemudian dikirim ke calculate price untuk diitung harganya
+
+integr testing small : hanya menguji internal
+integr testing large : contohnya ngecek barcode dengan perangkat keras
+
+test object unit testing : method 
+test object integr testing : parameter, argumen, (hubungan antara komponen satu dengan yg lain)
+
+contoh defect yg ditemukan di integr test :
+-method yg ngirim data salah kirim atau malah datanya dikirim
+-mungkin salah kirim variabel
+-komponen yg nerima crash.. entah salah panggil tipe data, memori penuh
+-method jalan. tapi komponen yg nerima salah receive / salah interpretasi.
+protocol faults (network error dsb)
+transimi data(tipe data yg salah diartikan dst
+data berhasil ditransmisikan tapi timing nya salah, entah krn manggilnya atau parameter blm diproses / interval waktu yg trlalu pendek
+
+test driver 
+-butuh monitor pake debugger untuk ngelog 
+
+komponen mana yg diintegrasi terlebih dahulu.. ada bbrp pertimbangan kalu mau memasangkan / mengintegrasi trlebih dahulu
+-arsitektur sistem, dikelompokkan sesuai method yg ada hubungannya
+-project plan, ada time managementnya. schedule management. when to test. dr sini bisa tau kapan komponen selesai
+-test plan, berapa kali harus diuji dan ada di level pengujian mana
+
+yg ideal seperti apa? tergantung ukuran sistem dan kekompleks an didalamnya
+
+method yang pemanggil namanya : driver
+komponen yang dipanggil : stub
+
+top down integration - higher level to lower level
+yg tidak dipanggil oleh siapapun tapi memanggil yg lain
+komponen tertinggi
+top down butuh stub
+
+bottom up integration 
+dimmulai dr yg paling bawah sendiri : kalu di mvc model2nya,
+bottom up butuh drive
+
+adhoc integration
+begitu jadi langsung dicoba. sangat mungkin butuh driver dan stub sekaligus
+
+backbone integration
+komponen nempel denngan struktur utama.. misal yg terkait dengan pemesanan apasaja tempel2
+harustau struktur mana yg dijadikan struktur dasar/ utama
+
+bigbang integration (jangan dilakukan)
+1 sistem harus jadi dulu baru dilakukan integration testing
+waktu yang harusnya bisa jadi test uji, habis untuk developing
+fault 
+meskipun sistemnya kecil kalubisa jangan pake big bang integration
+apakah ada kondisi khusus harus pake bigbang?
+pertimbangan : kembali ke deadline project. tekanan proyek dan waktu
+bigbang = ekstrim programming
+
+
+izin bertanya bu, di bagian test strategis tadi semisal integration testing nya tidak memperhatikan pertimbangan2 sprti yg sudah disebutkan tadi, kira2 apakah pasti akan ada defect atau tidak?
